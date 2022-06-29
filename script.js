@@ -101,19 +101,20 @@ vara[2] = new Vara(
             text: "Discord: dsc.gg/raphy",
             y: 40,
             x: posX,
+            id: "link1",
             duration: 4000
         },
         {
             text: "Github: @raph-exe",
             y: 20,
             x: posX,
+            id: "link",
             duration: 3500
         },
         {
             text: "- Raphael",
             y: 10,
             color: "#3f51b5",
-            id: "link",
             x: posX,
             duration: 1500
         }
@@ -151,6 +152,22 @@ vara[2].ready(function () {
                     $(rect).click(function () {
                         console.log(true);
                         document.querySelector("#link").click();
+                    });
+                }
+                if (i == "link1") {
+                    var group = o.container;
+                    var rect = vara[2].createNode("rect", {
+                        x: 0,
+                        y: 0,
+                        width: o.container.getBoundingClientRect().width,
+                        height: o.container.getBoundingClientRect().height,
+                        fill: "transparent"
+                    });
+                    group.appendChild(rect);
+                    $(rect).css("cursor", "pointer");
+                    $(rect).click(function () {
+                        console.log(true);
+                        document.querySelector("#link1").click();
                     });
                 }
             });
